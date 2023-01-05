@@ -26,7 +26,7 @@ app.use(express.static("public"));
 
 //route
 app.get("/", (req: Request, res: Response) => {
-    res.send("Hello from server!");
+    res.send("Hello from foody server!");
 });
 
 app.use("/api", Router);
