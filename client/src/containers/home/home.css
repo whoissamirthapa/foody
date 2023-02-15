@@ -1,0 +1,117 @@
+.landing_home_hero {
+  background-image: url("../../assets/heroBg.png");
+  background-repeat: no-repeat;
+  background-position: 90% 100%;
+  background-size: contain;
+  min-height: 600px;
+}
+.indv_hero {
+  width: 40%;
+  background: rgba(251, 249, 249, 0.45);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+select:focus,
+select:active,
+select:visited,
+select {
+  outline: rgba(255, 90, 31, 1) !important;
+}
+.indv_featured_item {
+  width: 23%;
+}
+.homeabout {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url(../../assets/homeabout.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+input:focus,
+textarea:focus {
+  border: 2px solid rgba(255, 90, 31, 1) !important;
+}
+
+.footer_child > section:first-child {
+  width: 30%;
+}
+.footer_child > section:not(:first-child) {
+  width: 23.33%;
+}
+.footer_child section ul {
+  line-height: 180%;
+}
+.header_menu_page {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url(../../assets/aboutpagebg.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+@media all and (max-width: 1102px) {
+  .landing_home_hero_child {
+    width: 100%;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 850px) {
+  .indv_hero {
+    min-width: 45%;
+  }
+}
+@media all and (min-width: 768px) {
+  .home_contact_indv {
+    width: 49%;
+  }
+}
+@media all and (max-width: 768px) {
+  .footer_child > section:first-child {
+    width: 98%;
+    text-align: center;
+  }
+  .footer_child > section:not(:first-child) {
+    width: 98%;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .landing_home_hero {
+    background-position: top;
+  }
+  .landing_home_hero_child {
+    display: block;
+  }
+  .indv_hero {
+    width: 80% !important;
+    margin: 2rem auto;
+  }
+}
+@media all and (max-width: 557px) {
+  .featured_items {
+    justify-content: center;
+  }
+  .indv_featured_item {
+    width: 80%;
+  }
+}
+@media all and (min-width: 610px) and (max-width: 807px) {
+  .featured_items {
+    justify-content: space-around;
+  }
+}
+
+textarea {
+  resize: none !important;
+}

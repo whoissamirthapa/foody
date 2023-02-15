@@ -1,0 +1,163 @@
+section[role="home_fruit_sliders"] .swiper-pagination-horizontal {
+    bottom: -5px !important;
+}
+.swiper-pagination-bullet-active {
+    background-color: rgba(255, 90, 31, 1) !important;
+}
+.header_service_page {
+    background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url(./assets/servicepagebg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.header_about_page {
+    background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url(./assets/menupagebg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.header_contact_page {
+    background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url(./assets/contactpagebg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.triangle {
+    position: relative;
+    background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+        ),
+        url(./assets/contactfooterbg.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 75%;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0%, 100% 75%, 51% 100%, 0 74%);
+}
+
+@media all and (min-width: 768px) {
+    .cart_left {
+        width: 65%;
+    }
+    .cart_right {
+        width: 35%;
+    }
+    div.max-w-7xl {
+        height: 100vh;
+        min-height: 600px;
+        padding-bottom: 1rem !important;
+    }
+}
+
+.cart_head_tr th {
+    padding-bottom: 20px;
+}
+.cart_tr td {
+    padding-bottom: 20px;
+    padding-top: 5px;
+}
+div.max-w-7xl {
+    height: 100%;
+    padding-bottom: 1rem !important;
+}
+div.p-6 {
+    padding: 10px;
+}
+.xs_cart_col {
+    display: none;
+}
+@media all and (max-width: 500px) {
+    .cart_table_head > .cart_head_tr > th:not(:first-child) {
+        display: none;
+    }
+    .cart_tr td {
+        display: block;
+    }
+    .xs_cart_col {
+        display: block;
+    }
+    .first_cart_tr_td {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse !important;
+    }
+    .cart_tr td {
+        padding-bottom: 5px;
+        padding-top: 2px;
+    }
+    .cart_tr td:last-child {
+        margin-bottom: 1.5rem;
+        border-bottom: 0.5px solid rgba(255, 90, 31, 0.5);
+    }
+    .first_cart_tr_td > div:first-child {
+        display: flex;
+        justify-content: center;
+    }
+    .first_cart_tr_td > div:last-child {
+        text-align: center;
+    }
+    .first_cart_tr_td > div:last-child > div {
+        justify-content: center;
+    }
+}
+.caslkdf {
+    min-height: 700px;
+}
+@media all and (min-width: 768px) {
+    .register_main_container,
+    .login_main_container {
+        background-image: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.6)
+            ),
+            url(./assets/menupagebg.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .register-container {
+        clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 0 50%);
+        padding-left: 10%;
+        width: 55%;
+    }
+    .login-container {
+        clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
+        padding-right: 7%;
+        padding-left: 3.5%;
+        width: 55%;
+    }
+    .login_register,
+    .register_login {
+        width: 45%;
+    }
+    .login_main_container,
+    .register_main_container {
+        margin: 2% 10%;
+    }
+}
+
+@media all and (max-width: 1080px) {
+    .login_main_container,
+    .register_main_container {
+        margin: 0;
+    }
+}
