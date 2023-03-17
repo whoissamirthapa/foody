@@ -30,12 +30,7 @@ router.put(
     upload.single("productImage"),
     productController.updateProduct
 );
-router.post(
-    "/:productId/review",
-    isAuth,
-    verifyUser.isVerifiedPhone,
-    productController.addReview
-);
+router.post("/:productId/review", isAuth, productController.addReview);
 router.delete(
     "/delete/:productId",
     isAuth,

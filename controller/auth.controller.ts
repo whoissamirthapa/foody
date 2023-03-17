@@ -24,7 +24,7 @@ declare const process: {
     };
 };
 
-const clientM = client(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
+// const clientM = client(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
 
 export default class AuthController {
     registerUser = async (req: Request, res: Response) => {
@@ -94,63 +94,63 @@ export default class AuthController {
         }
 
         // ------------------------number verification----------------------
-        if (user) {
-            const phoneNumber = "+977 " + String(number);
-            clientM.verify
-                .services(process.env.SERVICE_ID)
-                .verifications.create({
-                    to: phoneNumber,
-                    channel: "sms",
-                })
-                .then((verification) => {
-                    res.status(200).json({
-                        message: "Verification code sent",
-                        data: {
-                            _id: user._id,
-                            name: user.name,
-                            email: user.email,
-                            number: user.number,
-                            role: user.role,
-                        },
-                    });
-                });
-        }
+        // if (user) {
+        //     const phoneNumber = "+977 " + String(number);
+        //     clientM.verify
+        //         .services(process.env.SERVICE_ID)
+        //         .verifications.create({
+        //             to: phoneNumber,
+        //             channel: "sms",
+        //         })
+        //         .then((verification) => {
+        //             res.status(200).json({
+        //                 message: "Verification code sent",
+        //                 data: {
+        //                     _id: user._id,
+        //                     name: user.name,
+        //                     email: user.email,
+        //                     number: user.number,
+        //                     role: user.role,
+        //                 },
+        //             });
+        //         });
+        // }
     };
 
-    verifyNumber = async (req: Request, res: Response) => {
-        const { number, code } = req.body;
-        if (!number || !code) {
-            res.status(400).json({
-                error: "Invalid Link",
-            });
-            return;
-        }
-        const phoneNumber = "+977 " + String(number);
-        clientM.verify
-            .services(process.env.SERVICE_ID)
-            .verificationChecks.create({
-                to: phoneNumber,
-                code,
-            })
-            .then(async (verification) => {
-                //console.log(verification);
-                if (verification.status === "approved") {
-                    const userVerified = await User.findOneAndUpdate(
-                        { number: number },
-                        { $set: { isPhoneVerified: true } },
-                        { new: true }
-                    );
-                    res.status(200).json({
-                        message: "Number verified successfully",
-                        data: userVerified,
-                    });
-                } else {
-                    res.status(400).json({
-                        error: "Invalid code",
-                    });
-                }
-            });
-    };
+    // verifyNumber = async (req: Request, res: Response) => {
+    //     const { number, code } = req.body;
+    //     if (!number || !code) {
+    //         res.status(400).json({
+    //             error: "Invalid Link",
+    //         });
+    //         return;
+    //     }
+    //     const phoneNumber = "+977 " + String(number);
+    //     clientM.verify
+    //         .services(process.env.SERVICE_ID)
+    //         .verificationChecks.create({
+    //             to: phoneNumber,
+    //             code,
+    //         })
+    //         .then(async (verification) => {
+    //             //console.log(verification);
+    //             if (verification.status === "approved") {
+    //                 const userVerified = await User.findOneAndUpdate(
+    //                     { number: number },
+    //                     { $set: { isPhoneVerified: true } },
+    //                     { new: true }
+    //                 );
+    //                 res.status(200).json({
+    //                     message: "Number verified successfully",
+    //                     data: userVerified,
+    //                 });
+    //             } else {
+    //                 res.status(400).json({
+    //                     error: "Invalid code",
+    //                 });
+    //             }
+    //         });
+    // };
 
     loginUser = async (req: Request, res: Response) => {
         const { number, password } = req.body;

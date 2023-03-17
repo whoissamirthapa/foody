@@ -10,13 +10,9 @@ const verifyUser = new VerifyUser();
 
 router.post("/register", authController.registerUser);
 
-router.post("/verify-number", authController.verifyNumber);
+// router.post("/verify-number", authController.verifyNumber);
 
-router.post(
-    "/login",
-    verifyUser.isLoginPhoneVerified,
-    authController.loginUser
-);
+router.post("/login", authController.loginUser);
 
 router.get("/verify-email", isAuth, sendVerifyEmailLink);
 
